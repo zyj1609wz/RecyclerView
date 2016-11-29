@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by ${zyj} on 2016/11/29.
@@ -38,16 +37,15 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(
                     R.layout.item , null));
-            params = holder.itemView.getLayoutParams() ;
-            Random ra =new Random();
-            params.height = ra.nextInt( 100 ) + 30 ;
-            holder.itemView.setLayoutParams( params );
             return holder;
         }
 
         @Override
         public void onBindViewHolder(final MyViewHolder holder,
                                      final int position) {
+            params = holder.appName.getLayoutParams() ;
+            params.height = position * 2 + 50 ;
+            holder.appName.setLayoutParams( params );
 
             String info = list.get(position);
 

@@ -14,22 +14,27 @@
 ### app
 - recyclerview的线性布局
 
-`  recyclerView.setLayoutManager( new LinearLayoutManager( this ));`
+>    ` recyclerView.setLayoutManager( new LinearLayoutManager( this ));`
 
 - recyclerview的网格布局
 
-`recyclerView.setLayoutManager( new GridLayoutManager( MainActivity.this , 3 ));`
+>  `recyclerView.setLayoutManager( new GridLayoutManager( MainActivity.this , 3 ));`
+    
+- recyclerview的瀑布流布局
+
+>  `recyclerView.setLayoutManager( new StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.VERTICAL));`    
 
 - recyclerview的增加数据
 
-`  myAdapter.notifyItemChanged( position );`
+>    `myAdapter.notifyItemInserted( size );`
 
 - recyclerview的删除数据
 
-` myAdapter.notifyItemRemoved( 0 );`
+>    ` myAdapter.notifyItemRemoved( 0 );`
 
 - recyclerview的刷新数据
-`myAdapter.notifyDataSetChanged();`
+
+>    ` myAdapter.notifyDataSetChanged();`
 
 ### app2
 - recyclerview的瀑布流布局
