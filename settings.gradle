@@ -1,0 +1,1 @@
+include ':app', ':MultiRecyclerView', ':app2'
