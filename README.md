@@ -5,6 +5,9 @@
 ### app
 - recyclerview的线性布局
 - recyclerview的网格布局
+- recyclerview的增加数据
+- recyclerview的删除数据
+- recyclerview的刷新数据
 
 ### app2
 - recyclerview的瀑布流布局
