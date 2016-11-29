@@ -5,10 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by ${zyj} on 2016/11/29.
@@ -17,7 +17,7 @@ import java.util.List;
 public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         private Context context;
         private List<String> list;
-        private RelativeLayout.LayoutParams params;
+        private ViewGroup.LayoutParams params;
 
         public interface OnItemClickListener {
             void onItemClick(View view, int position);
@@ -38,12 +38,17 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(
                     R.layout.item , null));
+            params = holder.itemView.getLayoutParams() ;
+            Random ra =new Random();
+            params.height = ra.nextInt( 100 ) + 30 ;
+            holder.itemView.setLayoutParams( params );
             return holder;
         }
 
         @Override
         public void onBindViewHolder(final MyViewHolder holder,
                                      final int position) {
+
             String info = list.get(position);
 
             holder.appName.setText( info );
