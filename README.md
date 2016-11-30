@@ -13,7 +13,7 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 
 
 ## 项目介绍
-### app
+### LayoutManagerRecyclerView
 - recyclerview的线性布局
 
 >    ` recyclerView.setLayoutManager( new LinearLayoutManager( this ));`
@@ -85,7 +85,7 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 ```
 
 
-### app2
+### ItemDecorationRecyclerView
 - recyclerview的Item装饰器 ItemDecoration
 
   效果图
@@ -96,6 +96,12 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
   
   ![](/pic/pic1.png)
 
+
+### SectionRecyclerView
+- 标签功能
+
+### PinnedSectionRecyclerView
+- 黏性标签功能
 
 ### MultiRecyclerView 
 - recyclerview的复杂布局

@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // new StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.VERTICAL) 显示2列
                 // new StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.HORIZONTAL) 显示2行
                 recyclerView.setLayoutManager( new StaggeredGridLayoutManager( 2 , StaggeredGridLayoutManager.VERTICAL));
+                recyclerView.setAdapter( new StaggeredAdapter( this , list ));
                 myAdapter.notifyDataSetChanged();
                 break;
             case R.id.add:
