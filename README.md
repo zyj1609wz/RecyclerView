@@ -86,7 +86,9 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 
 
 ### app2
-- recyclerview的瀑布流布局
+- recyclerview的Item装饰器 ItemDecoration
+  
+  ![](/pic/pic1.png)
 
 
 ### MultiRecyclerView 
