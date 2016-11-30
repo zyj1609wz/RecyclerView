@@ -90,6 +90,7 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
   效果图
   ![](/pic/gif1.gif)
   
+  ItemDecoration 常见的方法
   ![](/pic/pic1.png)
 
 
