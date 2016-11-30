@@ -1,1 +1,1 @@
-include ':app', ':MultiRecyclerView', ':app2', ':library', ':app3', ':SectionRecyclerView'
+include ':app', ':MultiRecyclerView', ':app2', ':library', ':app3', ':SectionRecyclerView', ':PinnedSectionRecyclerView'
