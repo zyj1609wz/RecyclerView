@@ -61,31 +61,28 @@ public class SectionItemDecoration extends RecyclerView.ItemDecoration {
         int right = parent.getWidth() - parent.getPaddingRight();
         float lineHeight = textPaint.getTextSize() + fontMetrics.descent;
 
-        Log.d( "rrr" , "item:  " + itemCount  + "  cc： " + childCount ) ;
-        long preGroupId, groupId = -1;
+        long preGroupId, groupId = - 1 ;
         for (int i = 0; i < childCount; i++) {
             View childView = parent.getChildAt(i);
             int position = parent.getChildAdapterPosition(childView);
-
             preGroupId = groupId;
             groupId = mDecorationCallback.getGroupId(position);
-            Log.d( "ggg" , "groupId:  " + groupId  + "  preGroupId： " + preGroupId ) ;
-           if (groupId < 0 || groupId == preGroupId) continue;
+            if (groupId < 0 || groupId == preGroupId) continue;
 
             String textLine = mDecorationCallback.getGroupFirstLine(position);
             if (TextUtils.isEmpty(textLine)) continue;
 
             int viewBottom = childView.getBottom();
-            float textY = Math.max(topGap, childView.getTop());
-
-            Log.d( "rrs" , "top:  " + topGap  + "  getTop： " + childView.getTop() ) ;
-
+            float textY = Math.max(topGap, childView.getTop() );
             if (position + 1 < itemCount) { //下一个和当前不一样移动当前
                 long nextGroupId = mDecorationCallback.getGroupId(position + 1);
                 if (nextGroupId != groupId && viewBottom < textY ) {//组内最后一个view进入了header
                     textY = viewBottom ;
                 }
             }
+
+            Log.d( "tttt" , "topGap: " + topGap  + "  getTop: "  + childView.getTop() + "  " + (textY - topGap)) ;
+
             c.drawRect(left, textY - topGap, right, textY, paint);
             c.drawText(textLine, left, textY, textPaint);
         }
