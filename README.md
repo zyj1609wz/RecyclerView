@@ -87,6 +87,8 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 
 ### app2
 - recyclerview的Item装饰器 ItemDecoration
+  效果图
+  ![](/pic/gif1.gif)
   
   ![](/pic/pic1.png)
 

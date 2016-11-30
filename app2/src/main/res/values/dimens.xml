@@ -7,4 +7,5 @@
     <dimen name="divider_top">2dp</dimen>
     <dimen name="divider_left">2dp</dimen>
     <dimen name="divider_right">2dp</dimen>
+    <dimen name="tag_width">10dp</dimen>
 </resources>
