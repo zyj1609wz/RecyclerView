@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,6 @@ import java.util.List;
 public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         private Context context;
         private List<String> list;
-        private ViewGroup.LayoutParams params;
 
         public interface OnItemClickListener {
             void onItemClick(View view, int position);
@@ -43,10 +43,6 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         @Override
         public void onBindViewHolder(final MyViewHolder holder,
                                      final int position) {
-            params = holder.appName.getLayoutParams() ;
-            params.height = position * 2 + 50 ;
-            holder.appName.setLayoutParams( params );
-
             String info = list.get(position);
 
             holder.appName.setText( info );
@@ -78,5 +74,46 @@ public class MyAdapter extends  RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 super(view);
                 appName = (TextView) view.findViewById(R.id.item_name );
         }
+    }
+
+    /**
+     * 添加数据
+     * @param content
+     * @param position
+     */
+    public void addItem( String content, int position) {
+        list.add(position, content);
+        notifyItemInserted(position);
+    }
+
+    /**
+     * 增加数据
+     * @param content
+     */
+    public void addItem( String content ){
+        if ( list == null ) {
+            list = new ArrayList<>() ;
+        }
+        list.add( list.size() , content );
+        notifyItemInserted( list.size() );
+    }
+
+    /**
+     * 删除数据
+     * @param model
+     */
+    public void removeItem(String model) {
+        int position = list.indexOf(model);
+        list.remove(position);
+        notifyItemRemoved(position);//Attention!
+    }
+
+    /**
+     * 删除数据
+     * @param position
+     */
+    public void removeItem( int position ){
+        list.remove( position ) ;
+        notifyItemRemoved( position );
     }
 }

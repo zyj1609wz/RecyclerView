@@ -1,4 +1,6 @@
 # RecyclerView
+RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不一样的是，RecyclerView不再负责Item的摆放等显示方面的功能。所有和布局、绘制等方面的工作Google都其拆分成不同的类进行管理。所以开发者可以自定义各种各样满足定制需求的的功能类。
+
 这个是RecycleView的常见用法
 
 | 类名        | 说明      |
@@ -35,6 +37,53 @@
 - recyclerview的刷新数据
 
 >    ` myAdapter.notifyDataSetChanged();`
+
+- 更新数据的方法
+
+```
+ /**
+     * 添加数据
+     * @param content
+     * @param position
+     */
+    public void addItem( String content, int position) {
+        list.add(position, content);
+        notifyItemInserted(position);
+    }
+
+    /**
+     * 增加数据
+     * @param content
+     */
+    public void addItem( String content ){
+        if ( list == null ) {
+            list = new ArrayList<>() ;
+        }
+        list.add( list.size() , content );
+        notifyItemInserted( list.size() );
+    }
+
+    /**
+     * 删除数据
+     * @param model
+     */
+    public void removeItem(String model) {
+        int position = list.indexOf(model);
+        list.remove(position);
+        notifyItemRemoved(position);//Attention!
+    }
+
+    /**
+     * 删除数据
+     * @param position
+     */
+    public void removeItem( int position ){
+        list.remove( position ) ;
+        notifyItemRemoved( position );
+    }
+
+```
+
 
 ### app2
 - recyclerview的瀑布流布局

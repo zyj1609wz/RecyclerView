@@ -77,13 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myAdapter.notifyDataSetChanged();
                 break;
             case R.id.add:
-                int size = list.size() ;
-                list.add( "add date " + size  ) ;
-                myAdapter.notifyItemInserted( size );
+                myAdapter.addItem( "add date"  );
                 break;
             case R.id.remove :
-                list.remove( 0 ) ;
-                myAdapter.notifyItemRemoved( 0 );
+                myAdapter.removeItem( list.size() -1  ) ;
                 break;
         }
     }
