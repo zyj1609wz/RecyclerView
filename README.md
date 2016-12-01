@@ -170,6 +170,8 @@ https://github.com/wasabeef/recyclerview-animators
 
 ![](/pic/MultiType.gif)
 
+## RefreshRecyclerView 
+   这个项目是实现下拉刷新，滑到底部自动加载的
 
 ## 参考资料
 - [明日之星-RecyclerView](http://www.imooc.com/learn/424)

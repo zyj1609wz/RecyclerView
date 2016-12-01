@@ -1,1 +1,1 @@
-include ':LayoutManagerRecyclerView', ':MultiRecyclerView', ':ItemDecorationRecyclerView', ':library', ':app3', ':SectionRecyclerView', ':PinnedSectionRecyclerView', ':AnimatorRecyclerview', ':MultiRecyclerView2'
+include ':LayoutManagerRecyclerView', ':MultiRecyclerView', ':ItemDecorationRecyclerView', ':library', ':app3', ':SectionRecyclerView', ':PinnedSectionRecyclerView', ':AnimatorRecyclerview', ':MultiRecyclerView2', ':RefreshRecyclerView'

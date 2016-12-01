@@ -11,8 +11,6 @@ import me.drakeet.multitype.ItemViewProvider;
 
 public abstract class BaseItemViewProvider<C, V extends RecyclerView.ViewHolder> extends ItemViewProvider<C, V > {
 
-        /* @formatter:off */
-
     private OnItemClickListener mOnItemClickListener ;
     private OnItemLongClickListener mOnItemLongClickListener ;
 
