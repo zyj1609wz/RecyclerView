@@ -12,8 +12,8 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 | RecyclerView.ItemAnimator  | 负责添加、删除数据时的动画效果 |
 
 
-## 项目介绍
-### LayoutManagerRecyclerView
+# 项目介绍
+## LayoutManagerRecyclerView
 - recyclerview的线性布局
 
 >    ` recyclerView.setLayoutManager( new LinearLayoutManager( this ));`
@@ -100,10 +100,10 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 ### SectionRecyclerView
 - 标签功能
 
-### PinnedSectionRecyclerView
+## PinnedSectionRecyclerView
 - 黏性标签功能
 
-### AnimatorRecyclerview item 动画效果
+## AnimatorRecyclerview item 动画效果
 - 默认动画
 ```
   //设置默认的动画
@@ -137,28 +137,32 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 https://github.com/wasabeef/recyclerview-animators
 
 
-### MultiRecyclerView 
+## MultiRecyclerView 
 - recyclerview的复杂布局
 
 效果图
 
 ![](/pic/multi_item.gif)
 
-好用的第三方库
+## MultiRecyclerView2 
+   这个项目是复杂布局分发框架 MultiType的使用
 
-### MultiRecyclerView2 
-- recyclerview的复杂布局分发框架 MultiType 使用
+- MultiType 是什么？
+ > MultiType 就是一个多类型列表视图的中间分发框架，它能帮助你快速并且清晰地开发一些复杂的列表页面。它本是为聊天页面开发的，聊天页面的消息类型也是有大量不同种类，并且新增频繁，而 MultiType 能够轻松胜任，代码模块化，随时可拓展新的类型进入列表当中。它内建了 类型 - View 的复用池系统，支持 RecyclerView，使用简单灵活，令代码清晰、拥抱变化。  
+
 
 - github:
-  [https://github.com/drakeet/MultiType](https://github.com/drakeet/MultiType)
-  [https://github.com/drakeet/MultiTypeTemplates](https://github.com/drakeet/MultiTypeTemplates)
+ > [https://github.com/drakeet/MultiType](https://github.com/drakeet/MultiType)
+  
+ > [https://github.com/drakeet/MultiTypeTemplates](https://github.com/drakeet/MultiTypeTemplates)
   
 - 相关博客：
-  [Android 复杂的多类型列表视图新写法：MultiType](https://drakeet.me/multitype)
-  [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
+ > [Android 复杂的多类型列表视图新写法：MultiType](https://drakeet.me/multitype)
+  
+ > [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
   
 - Android 项目引用
- `compile 'me.drakeet.multitype:multitype:2.2.2'`
+ > `compile 'me.drakeet.multitype:multitype:2.2.2'`
 
 
 ## 参考资料
