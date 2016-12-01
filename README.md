@@ -166,6 +166,10 @@ https://github.com/wasabeef/recyclerview-animators
 - Android 项目引用
  > `compile 'me.drakeet.multitype:multitype:2.2.2'`
 
+效果图：
+
+![](/pic/MultiType.gif)
+
 
 ## 参考资料
 - [明日之星-RecyclerView](http://www.imooc.com/learn/424)
