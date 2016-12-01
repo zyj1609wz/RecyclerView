@@ -23,7 +23,7 @@ public class TextItemViewProvider extends BaseItemViewProvider< TextItem , TextI
 
     @Override
     protected void onBindViewHolder(@NonNull TextHolder holder, @NonNull TextItem textItem) {
-        setOnClick( holder ) ;
+        setOnClick( holder.itemView , holder.getAdapterPosition() ) ;
         holder.text.setText( textItem.getName() );
         setOnClick( holder.text , holder.getAdapterPosition() ) ;
     }

@@ -160,6 +160,8 @@ https://github.com/wasabeef/recyclerview-animators
  > [Android 复杂的多类型列表视图新写法：MultiType](https://drakeet.me/multitype)
   
  > [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
+ 
+ >[Android 复杂的列表视图新写法: MultiType 详解篇](https://drakeet.me/effective-multitype)
   
 - Android 项目引用
  > `compile 'me.drakeet.multitype:multitype:2.2.2'`

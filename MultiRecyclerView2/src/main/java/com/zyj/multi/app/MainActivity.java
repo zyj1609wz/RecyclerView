@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MultiTypeAdapter multiTypeAdapter ;
     /* Items 等价于 ArrayList<Object> */
     private Items items;
-private TextItemViewProvider textItemViewProvider ;
+    private TextItemViewProvider textItemViewProvider ;
+    private ImageItemViewProvider imageItemViewProvider ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +47,7 @@ private TextItemViewProvider textItemViewProvider ;
 
          /* 注册类型和 View 的对应关系 */
         multiTypeAdapter.register( TextItem.class, textItemViewProvider = new TextItemViewProvider());
-        multiTypeAdapter.register( ImageItem.class, new ImageItemViewProvider());
+        multiTypeAdapter.register( ImageItem.class, imageItemViewProvider = new ImageItemViewProvider());
 
          /* 模拟加载数据，也可以稍后再加载，然后使用
          * adapter.notifyDataSetChanged() 刷新列表 */
@@ -70,6 +71,13 @@ private TextItemViewProvider textItemViewProvider ;
                 }else {
                     Toast.makeText( MainActivity.this , "ddd " + ((TextItem)items.get(position )).getName()  , Toast.LENGTH_SHORT ).show(); ;
                 }
+            }
+        });
+
+        imageItemViewProvider.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText( MainActivity.this , "image " + ((ImageItem)items.get(position )).getName()   , Toast.LENGTH_SHORT ).show(); ;
             }
         });
     }

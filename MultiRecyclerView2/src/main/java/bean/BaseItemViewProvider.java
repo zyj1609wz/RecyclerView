@@ -24,10 +24,6 @@ public abstract class BaseItemViewProvider<C, V extends RecyclerView.ViewHolder>
         this.mOnItemLongClickListener = onItemLongClickListener ;
     }
 
-    protected void setOnClick(final RecyclerView.ViewHolder holder ){
-        setOnClick( holder.itemView , holder.getAdapterPosition() );
-    }
-
     protected void setOnClick(final View view , final int position ){
         if ( mOnItemClickListener != null ){
             view.setOnClickListener(new View.OnClickListener() {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zyj.multi.app.R;
 
@@ -24,18 +25,22 @@ public class ImageItemViewProvider extends BaseItemViewProvider< ImageItem , Ima
 
     @Override
     protected void onBindViewHolder(@NonNull ImageHolder holder, @NonNull ImageItem textItem) {
-        setOnClick( holder );
+        setOnClick( holder.itemView , holder.getAdapterPosition() );
         setOnClick( holder.imageView , holder.getAdapterPosition() );
+
         holder.imageView.setImageResource( R.mipmap.ic_launcher );
+        holder.name.setText( textItem.getName() );
     }
 
     static class ImageHolder extends RecyclerView.ViewHolder {
         @NonNull
+        private TextView name ;
         private final ImageView imageView ;
 
         ImageHolder(@NonNull View itemView) {
             super(itemView);
             this.imageView = (ImageView) itemView.findViewById(R.id.image );
+            this.name = (TextView) itemView.findViewById(R.id.image_name );
         }
     }
 }
