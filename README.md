@@ -147,7 +147,7 @@ https://github.com/wasabeef/recyclerview-animators
 
 ## 参考资料
 - [明日之星-RecyclerView](http://www.imooc.com/learn/424)
-- [RecyclerView使用详解（二）](http://frank-zhu.github.io/android/2015/02/25/android-recyclerview-part-2/)
+- [RecyclerView使用详解（二） 复杂布局](http://frank-zhu.github.io/android/2015/02/25/android-recyclerview-part-2/)
 - []()
 - []()
 - []()
