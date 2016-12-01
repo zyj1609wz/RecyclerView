@@ -49,7 +49,7 @@ public class MyAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return new ImageViewHolder( view1 );
         } else {
             View view2 = mLayoutInflater.inflate(R.layout.item , parent, false) ;
-            return new ImageViewHolder( view2 );
+            return new MyViewHolder( view2 );
         }
     }
 
