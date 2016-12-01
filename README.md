@@ -144,10 +144,26 @@ https://github.com/wasabeef/recyclerview-animators
 
 ![](/pic/multi_item.gif)
 
+好用的第三方库
+
+### MultiRecyclerView2 
+- recyclerview的复杂布局分发框架 MultiType 使用
+
+- github:
+  [https://github.com/drakeet/MultiType](https://github.com/drakeet/MultiType)
+  [https://github.com/drakeet/MultiTypeTemplates](https://github.com/drakeet/MultiTypeTemplates)
+  
+- 相关博客：
+  [Android 复杂的多类型列表视图新写法：MultiType](https://drakeet.me/multitype)
+  [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
+  
+- Android 项目引用
+ `compile 'me.drakeet.multitype:multitype:2.2.2'`
+
 
 ## 参考资料
 - [明日之星-RecyclerView](http://www.imooc.com/learn/424)
 - [RecyclerView使用详解（二） 复杂布局](http://frank-zhu.github.io/android/2015/02/25/android-recyclerview-part-2/)
-- []()
+- [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
 - []()
 - []()
