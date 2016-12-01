@@ -27,6 +27,13 @@
             android:text="网格布局"
             />
 
+        <Button
+            android:id="@+id/bt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加一种布局"
+            />
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.zyj.multi.app.R;
 
+import impl.BaseItemViewProvider;
+
 /**
  * Created by ${zyj} on 2016/12/1.
  */

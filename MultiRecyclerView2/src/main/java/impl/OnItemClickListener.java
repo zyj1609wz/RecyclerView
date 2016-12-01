@@ -1,4 +1,4 @@
-package bean;
+package impl;
 
 import android.view.View;
 
