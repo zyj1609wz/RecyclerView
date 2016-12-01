@@ -139,3 +139,11 @@ https://github.com/wasabeef/recyclerview-animators
 
 ### MultiRecyclerView 
 - recyclerview的复杂布局
+
+
+## 参考资料
+- [明日之星-RecyclerView](http://www.imooc.com/learn/424)
+- []()
+- []()
+- []()
+- []()
