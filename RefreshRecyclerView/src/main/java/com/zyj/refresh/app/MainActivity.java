@@ -57,10 +57,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addOnScrollListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore() {
+                myAdapter.addItem( "add ");
+                myAdapter.addItem( "add ");
+                myAdapter.addItem( "add ");
+                myAdapter.addItem( "add ");
+                myAdapter.addItem( "add ");
                 Toast.makeText( MainActivity.this , "没有数据了" , Toast.LENGTH_SHORT).show();
             }
         });
-
 
         getData();
         myAdapter = new MyAdapter( this , list ) ;
