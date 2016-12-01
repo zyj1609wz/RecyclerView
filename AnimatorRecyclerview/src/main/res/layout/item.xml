@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="#99dddd"
-    tools:context="com.zyj.app.MainActivity">
+    >
 
     <TextView
         android:id="@+id/item_name"

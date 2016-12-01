@@ -2,6 +2,7 @@ package com.zyj.app;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +13,13 @@ import java.util.List;
 
 /**
  * Created by ${zyj} on 2016/11/29.
- * 瀑布流效果
+ * 瀑布流效果的专用适配器
  */
 
 public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyViewHolder> {
     private Context context;
     private List<String> list;
-    private List<Integer> itemHeight ;
+    private List<Integer> itemHeightList ;
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
@@ -35,9 +36,9 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
         this.list = list;
 
         //随机生成item高度
-        itemHeight = new ArrayList<>() ;
+        itemHeightList = new ArrayList<>() ;
         for ( int i = 0 ; i < list.size() ; i++ ){
-            itemHeight.add((int) (100 + Math.random() * 300)) ;
+            itemHeightList.add((int) (100 + Math.random() * 300)) ;
         }
     }
 
@@ -53,11 +54,14 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
                                  final int position) {
 
         //给item 设置高度
-        ViewGroup.LayoutParams params =  holder.itemView.getLayoutParams() ;
-        if ( params != null ){
-            params.height = itemHeight.get( position ) ;
-            holder.itemView.setLayoutParams( params ) ;
+        StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) holder.itemView.getLayoutParams();
+        int itemHeight = itemHeightList.get( position ) ;
+        if ( params == null ){
+            params = new StaggeredGridLayoutManager.LayoutParams( StaggeredGridLayoutManager.LayoutParams.MATCH_PARENT , itemHeight  ) ;
+        }else {
+            params.height = itemHeight ;
         }
+        holder.itemView.setLayoutParams( params ) ;
 
         String info = list.get(position);
 

@@ -103,5 +103,39 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 ### PinnedSectionRecyclerView
 - 黏性标签功能
 
+### AnimatorRecyclerview item 动画效果
+- 默认动画
+```
+  //设置默认的动画
+  recyclerView.setItemAnimator( new DefaultItemAnimator()) ;
+```
+
+- 第三动画库 https://github.com/gabrielemariotti/RecyclerViewItemAnimators
+
+```
+  //从屏幕底部飞进来的动画
+  recyclerView.setItemAnimator( new SlideInOutBottomItemAnimator( recyclerView ));
+
+  //从屏幕左侧飞进来的动画
+  recyclerView.setItemAnimator( new SlideInOutLeftItemAnimator( recyclerView ));
+
+  //从屏幕右侧飞进来的动画
+  recyclerView.setItemAnimator( new SlideInOutRightItemAnimator( recyclerView ));
+
+  //从屏幕顶部飞进来的动画
+  recyclerView.setItemAnimator( new SlideInOutTopItemAnimator( recyclerView ));
+
+  //缩放进入屏幕, (备注：测试的时候有bug )
+  recyclerView.setItemAnimator( new ScaleInOutItemAnimator( recyclerView )) ;
+
+  //缩放的同时从屏幕右侧飞进来  (备注：测试的时候有bug )
+  recyclerView.setItemAnimator( new SlideScaleInOutRightItemAnimator( recyclerView ));
+  
+```
+
+- 其他动画开源库
+https://github.com/wasabeef/recyclerview-animators
+
+
 ### MultiRecyclerView 
 - recyclerview的复杂布局
