@@ -110,7 +110,9 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
   recyclerView.setItemAnimator( new DefaultItemAnimator()) ;
 ```
 
-- 第三动画库 https://github.com/gabrielemariotti/RecyclerViewItemAnimators
+- 第三动画库 
+
+> https://github.com/gabrielemariotti/RecyclerViewItemAnimators
 
 ```
   //从屏幕底部飞进来的动画
@@ -134,7 +136,8 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 ```
 
 - 其他动画开源库
-https://github.com/wasabeef/recyclerview-animators
+
+> https://github.com/wasabeef/recyclerview-animators
 
 
 ## MultiRecyclerView 
@@ -166,6 +169,7 @@ https://github.com/wasabeef/recyclerview-animators
  >[Android 复杂的列表视图新写法: MultiType 详解篇](https://drakeet.me/effective-multitype)
   
 - Android 项目引用
+
  > `compile 'me.drakeet.multitype:multitype:2.2.2'`
 
 效果图：
