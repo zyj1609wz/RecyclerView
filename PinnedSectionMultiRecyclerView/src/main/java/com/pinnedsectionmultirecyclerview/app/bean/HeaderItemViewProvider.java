@@ -1,6 +1,7 @@
 package com.pinnedsectionmultirecyclerview.app.bean;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -8,10 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.pinnedsectionmultirecyclerview.app.HeaderUtil;
 import com.pinnedsectionmultirecyclerview.app.R;
 import com.pinnedsectionmultirecyclerview.app.impl.BaseItemViewProvider;
+import com.pinnedsectionmultirecyclerview.app.impl.HeaderUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,11 +25,14 @@ public class HeaderItemViewProvider
         extends BaseItemViewProvider<HeaderItem, HeaderItemViewProvider.HeaderViewHolder> {
 
     public HeaderUtil headerUtil ;
-    public Map<Integer , Integer > mapID  ;
+    private Map<Integer , Integer > headerIdMap  ;
+    private Context mContext ;
 
-    public HeaderItemViewProvider(Activity activity ){
-        headerUtil = new HeaderUtil( activity ) ;
-        mapID = new HashMap<>() ;
+    public HeaderItemViewProvider(Context context ){
+        this.mContext = context ;
+        //创建Header视图
+        headerUtil = new HeaderUtil((Activity) context) ;
+        headerIdMap = new HashMap<>() ;
     }
 
     @NonNull
@@ -43,10 +48,11 @@ public class HeaderItemViewProvider
             @NonNull HeaderViewHolder holder, @NonNull HeaderItem dog) {
         int postion = holder.getAdapterPosition() ;
         setOnClick( holder.itemView ,  postion );
-        mapID.put( postion , 1  ) ;
-        Log.d( "zd", "onCreateViewHolder: " + holder.getAdapterPosition() );
+        headerIdMap.put( postion , 1  ) ;
         holder.dogName_tv.setText( dog.name );
     }
+
+
 
     static class HeaderViewHolder extends RecyclerView.ViewHolder {
         TextView dogName_tv ;
@@ -57,6 +63,16 @@ public class HeaderItemViewProvider
     }
 
     public boolean isHeader(int id ){
-       return ( mapID.get( id) == null )? false : true ;
+       return ( headerIdMap.get( id) == null )? false : true ;
     }
+
+    public void sticky( boolean sticky ){
+        headerUtil.sticky( sticky );
+    }
+
+    public void update(int position ) {
+        Log.d( "zhao", "update: " + position );
+        Toast.makeText( mContext , "up " + position , Toast.LENGTH_SHORT).show();
+    }
+
 }

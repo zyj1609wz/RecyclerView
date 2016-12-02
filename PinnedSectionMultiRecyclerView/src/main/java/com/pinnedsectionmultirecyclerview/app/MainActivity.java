@@ -9,10 +9,10 @@ import android.widget.Toast;
 
 import com.pinnedsectionmultirecyclerview.app.bean.HeaderItem;
 import com.pinnedsectionmultirecyclerview.app.bean.HeaderItemViewProvider;
-import com.pinnedsectionmultirecyclerview.app.bean.HeaderScrollMoreListener;
 import com.pinnedsectionmultirecyclerview.app.bean.Person;
 import com.pinnedsectionmultirecyclerview.app.bean.PersonViewProvider;
 import com.pinnedsectionmultirecyclerview.app.impl.DividerItemDecoration;
+import com.pinnedsectionmultirecyclerview.app.impl.HeaderScrollMoreListener;
 import com.pinnedsectionmultirecyclerview.app.impl.OnItemClickListener;
 
 import me.drakeet.multitype.Items;
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         recyclerView.addOnScrollListener( new HeaderScrollMoreListener( headerItemViewProvider ));
-
         recyclerView.setAdapter( multiTypeAdapter );
 
     }
