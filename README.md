@@ -152,15 +152,17 @@ https://github.com/wasabeef/recyclerview-animators
 
 
 - github:
+
  > [https://github.com/drakeet/MultiType](https://github.com/drakeet/MultiType)
-  
+ > 
  > [https://github.com/drakeet/MultiTypeTemplates](https://github.com/drakeet/MultiTypeTemplates)
   
 - 相关博客：
+
  > [Android 复杂的多类型列表视图新写法：MultiType](https://drakeet.me/multitype)
-  
+ > 
  > [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
- 
+ >
  >[Android 复杂的列表视图新写法: MultiType 详解篇](https://drakeet.me/effective-multitype)
   
 - Android 项目引用
