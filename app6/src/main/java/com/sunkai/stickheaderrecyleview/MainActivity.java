@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
 import com.sunkai.stickheaderrecyleview.view.adapter.NewWifiListAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         final ViewGroup viewGroup = new FrameLayout(getApplicationContext());
         headerView = newWifiListAdapter.updateHeaderView(viewGroup, 0);
         frameLayout.addView(viewGroup);
-
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
