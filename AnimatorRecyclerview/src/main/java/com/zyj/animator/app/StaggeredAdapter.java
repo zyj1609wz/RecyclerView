@@ -6,6 +6,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,8 +19,7 @@ import java.util.List;
 
 public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyViewHolder> {
     private Context context;
-    private List<String> list;
-    private List<Integer> itemHeightList ;
+    private List<Bean> list;
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
@@ -31,15 +31,9 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
         onItemClickListener = listener;
     }
 
-    public StaggeredAdapter(Context context, List<String> list) {
+    public StaggeredAdapter(Context context, List<Bean> list) {
         this.context = context;
         this.list = list;
-
-        //随机生成item高度
-        itemHeightList = new ArrayList<>() ;
-        for ( int i = 0 ; i < list.size() ; i++ ){
-            itemHeightList.add((int) (100 + Math.random() * 300)) ;
-        }
     }
 
     @Override
@@ -52,18 +46,10 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
     @Override
     public void onBindViewHolder(final MyViewHolder holder,
                                  final int position) {
-        //给item 设置高度
-        StaggeredGridLayoutManager.LayoutParams params = (StaggeredGridLayoutManager.LayoutParams) holder.itemView.getLayoutParams();
-        int itemHeight = itemHeightList.get( position ) ;
-        if ( params == null ){
-            params = new StaggeredGridLayoutManager.LayoutParams( StaggeredGridLayoutManager.LayoutParams.MATCH_PARENT , itemHeight  ) ;
-        }else {
-            params.height = itemHeight ;
-        }
-        holder.itemView.setLayoutParams( params ) ;
 
+        Bean bean = list.get( position ) ;
 
-        String info = list.get(position);
+        String info = bean.getName() ;
         holder.appName.setText( info );
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,10 +72,13 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
+        private RelativeLayout item_rel ;
         private TextView appName;
+
 
         public MyViewHolder(View view) {
             super(view);
+            item_rel = (RelativeLayout) view.findViewById( R.id.item_rel );
             appName = (TextView) view.findViewById(R.id.item_name );
         }
     }
@@ -99,9 +88,8 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
      * @param content
      * @param position
      */
-    public void addItem( String content, int position) {
+    public void addItem( Bean content, int position) {
         list.add(position, content);
-        itemHeightList.add( position , (int) (100 + Math.random() * 300)) ;
         notifyItemInserted(position);
     }
 
@@ -109,12 +97,11 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
      * 增加数据
      * @param content
      */
-    public void addItem( String content ){
+    public void addItem( Bean content ){
         if ( list == null ) {
             list = new ArrayList<>() ;
         }
         list.add( list.size() , content );
-        itemHeightList.add((int) (100 + Math.random() * 300)) ;
         notifyItemInserted( list.size() );
     }
 
@@ -125,8 +112,7 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
     public void removeItem(String model) {
         int position = list.indexOf(model);
         list.remove(position);
-        itemHeightList.remove( position ) ;
-        notifyItemRemoved(position);//Attention!
+        notifyItemRemoved(position);
     }
 
     /**
@@ -135,7 +121,6 @@ public class StaggeredAdapter extends  RecyclerView.Adapter<StaggeredAdapter.MyV
      */
     public void removeItem( int position ){
         list.remove( position ) ;
-        itemHeightList.remove( position ) ;
         notifyItemRemoved( position );
     }
 }

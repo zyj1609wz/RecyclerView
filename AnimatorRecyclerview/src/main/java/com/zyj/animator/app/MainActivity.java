@@ -3,6 +3,7 @@ package com.zyj.animator.app;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
@@ -22,9 +23,10 @@ import it.gmariotti.recyclerview.itemanimator.SlideScaleInOutRightItemAnimator;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private StaggeredAdapter myAdapter ;
-    private List<String> list = new ArrayList<>();
+    private List<Bean> list = new ArrayList<>();
 
     private RecyclerView recyclerView ;
+    private GridLayoutManager layoutManager ;
 
     private RecyclerView.ItemDecoration itemDecoration1 ;
     private Button add_bt , remove_bt ;
@@ -34,9 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        for ( int i = 0 ; i < 60 ; i ++ ) {
-            list.add( "数据   " + i ) ;
-        }
+        getData();
 
         add_bt = (Button) findViewById( R.id.add);
         remove_bt = (Button) findViewById( R.id.remove );
@@ -44,9 +44,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         remove_bt.setOnClickListener( this );
 
         recyclerView = (RecyclerView) findViewById( R.id.recycler_view );
-        recyclerView.setLayoutManager( new StaggeredGridLayoutManager( 3 , StaggeredGridLayoutManager.VERTICAL  ));
+        layoutManager = new GridLayoutManager( this , 4 , GridLayoutManager.VERTICAL , false ) ;
+
         myAdapter = new StaggeredAdapter( this , list ) ;
+        recyclerView.setLayoutManager( layoutManager );
         recyclerView.setAdapter( myAdapter );
+
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                Bean bean = list.get(position);
+                return bean.getType() ;
+            }
+        });
 
         myAdapter.setOnItemClickListener(new StaggeredAdapter.OnItemClickListener() {
             @Override
@@ -85,11 +95,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.add:
-                myAdapter.addItem( "dd");
+                myAdapter.addItem(  getBean( 2 )  );
                 break;
             case R.id.remove :
                 myAdapter.removeItem( list.size() -1 );
                 break;
         }
+    }
+
+    void getData(){
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 2 ) ) ;
+
+        list.add( getBean( 2 ) ) ;
+        list.add( getBean( 2 ) ) ;
+
+        list.add( getBean( 3 ) ) ;
+        list.add( getBean( 1 ) ) ;
+
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 3 ) ) ;
+
+        list.add( getBean( 4 ) ) ;
+
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+
+        list.add( getBean( 2 ) ) ;
+        list.add( getBean( 2 ) ) ;
+
+        list.add( getBean( 3 ) ) ;
+        list.add( getBean( 1 ) ) ;
+
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 2 ) ) ;
+
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 3 ) ) ;
+
+        list.add( getBean( 3 ) ) ;
+        list.add( getBean( 1 ) ) ;
+
+        list.add( getBean( 2 ) ) ;
+        list.add( getBean( 1 ) ) ;
+        list.add( getBean( 1 ) ) ;
+    }
+
+    int po = 0 ;
+
+    private Bean getBean( int type ){
+        Bean bean = new Bean() ;
+        bean.setName(  "数据   " + po  );
+        bean.setType( type );
+        po ++ ;
+        return bean  ;
     }
 }
