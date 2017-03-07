@@ -183,5 +183,4 @@ RecyclerView不再负责显示工作,用法比ListView更解耦。和ListView不
 - [明日之星-RecyclerView](http://www.imooc.com/learn/424)
 - [RecyclerView使用详解（二） 复杂布局](http://frank-zhu.github.io/android/2015/02/25/android-recyclerview-part-2/)
 - [Android 复杂的列表试图新写法 MultiType](http://gank.io/post/5823bcf6421aa90e799ec2ad)
-- []()
-- []()
+- [天猫开源的一个RecyclerView扩展库vlayout](https://github.com/alibaba/vlayout)
